@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "material-vision-ai"
+version = "0.1.0"
+description = "Sortient's open-source Material Vision AI toolkit"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+  {name = "Sortient"}
+]
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.23",
+  "PyYAML>=6.0",
+]
+
+[project.optional-dependencies]
+serve = ["fastapi>=0.110", "pydantic>=2.0"]
+visualize = ["matplotlib>=3.6"]
+
+[tool.setuptools.packages.find]
+include = ["material_vision_ai"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
